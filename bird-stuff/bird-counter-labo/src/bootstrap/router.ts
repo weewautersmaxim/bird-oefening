@@ -1,33 +1,31 @@
 import {
   createRouter,
-  createWebHashHistory,
   createWebHistory,
-  NavigationGuard,
   NavigationGuardNext,
   RouteLocationNormalized,
   Router,
   RouteRecordRaw,
 } from "vue-router"
-import History from "../screens/History.vue"
+import observations from "../screens/Observations.vue"
 import RealTime from "../screens/RealTime.vue"
 
 const routes: RouteRecordRaw[] = [
   {
     path: "/",
-    component: () => import("../screens/Birds.vue"),
-    // children: [
-    //   {
-    //     path: "./:birdid",
-    //     component: () => import("../components/screens/birdDetail.vue"),
-    //   },
-    // ],
+    component: () => import("../screens/birds.vue"),
+    children: [
+      {
+        path: "/:birdId",
+        component: () => import("../screens/birdDetail.vue"),
+      },
+    ],
     meta: {
       role: { name: "visitor" },
     },
   },
   {
-    path: "/history",
-    component: History,
+    path: "/observations",
+    component: observations,
     meta: {
       role: { name: "visitor" },
     },

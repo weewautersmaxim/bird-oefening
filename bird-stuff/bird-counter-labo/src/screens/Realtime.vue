@@ -7,5 +7,5 @@ export default defineComponent({
 </script>
 
 <template>
-  <h1>Realtime</h1>
+  <h1 class="text-4xl font-bold mb-3">Realtime</h1>
 </template>

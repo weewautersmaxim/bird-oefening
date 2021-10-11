@@ -1,4 +1,3 @@
-import cors from "cors"
 import { createApp } from "vue"
 import App from "./App.vue"
 
@@ -9,4 +8,4 @@ const app = createApp(App)
 
 app.use(router)
 
-app.mount("#app")
+app.mount(".bird-main-container")
